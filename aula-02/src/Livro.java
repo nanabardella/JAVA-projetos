@@ -1,4 +1,5 @@
 public class Livro {
+    //Atributo tipo nomeAtributo;
     String titulo;
     String autor;
     double preco;
@@ -7,6 +8,18 @@ public class Livro {
     String resumo;
     TipoCapaEnum tipoCapa; //COMUM, DURA
 
+    //Construtor
+    public Livro(){
+     tipoCapa = TipoCapaEnum.COMUM;
+    }
+
+    //Construtor livro que recebe uma editora
+    public Livro(Editora editora){
+        this.editora = editora;
+        tipoCapa = TipoCapaEnum.COMUM;
+    }
+
+    //Método para exibir o livro
     public void exibirLivro()
     {
         System.out.println("Livro: "+ titulo);
