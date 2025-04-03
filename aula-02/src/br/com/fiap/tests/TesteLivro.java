@@ -1,3 +1,9 @@
+package br.com.fiap.tests;
+
+import br.com.fiap.enums.TipoCapaEnum;
+import br.com.fiap.models.Editora;
+import br.com.fiap.models.Livro;
+
 import java.util.Scanner;
 
 public class  TesteLivro {
@@ -12,7 +18,7 @@ public class  TesteLivro {
         novatec.site = "www.novatec.com";
         novatec.telefone = "1157292232";
 
-        Livro meuLivro = new Livro();    //Esse Livro() é um construtor! Construtor: é o momento em que vou criar um
+        Livro meuLivro = new Livro();    //Esse br.com.fiap.models.Livro() é um construtor! Construtor: é o momento em que vou criar um
                                          // objeto e digo como é criado. Todo construtor tem o mesmo nome da classe.
                                          // existe um construtor padrão (vazio), porém ele só existe se "eu" não criar
                                          // outro. a partir do momento em que cio 1 construtor, o padrão deixa de existir.
@@ -23,7 +29,7 @@ public class  TesteLivro {
         meuLivro.editora = novatec;
         meuLivro.paginas = 484;
         meuLivro.resumo = "UML abordagem prática";
-        //meuLivro.tipoCapa = TipoCapaEnum.DURA;
+        //meuLivro.tipoCapa = br.com.fiap.enums.TipoCapaEnum.DURA;
 
 
 
