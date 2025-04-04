@@ -14,31 +14,35 @@ public class  TesteLivro {
         Scanner leitorNumerico = new Scanner(System.in);
 
         Editora novatec = new Editora();
-        novatec.nome = "Nova Tec";
-        novatec.site = "www.novatec.com";
-        novatec.telefone = "1157292232";
+        novatec.setNome("Nova Tec");
+        novatec.setSite("www.novatec.com");
+        novatec.setTelefone("1157292232");
 
         Livro meuLivro = new Livro();    //Esse br.com.fiap.models.Livro() é um construtor! Construtor: é o momento em que vou criar um
                                          // objeto e digo como é criado. Todo construtor tem o mesmo nome da classe.
                                          // existe um construtor padrão (vazio), porém ele só existe se "eu" não criar
                                          // outro. a partir do momento em que cio 1 construtor, o padrão deixa de existir.
                                          // construtor não tem retorno.
-        meuLivro.titulo = "UML 2";
-        meuLivro.autor = "Gilleanes Guedes";
-        meuLivro.preco = 50;
-        meuLivro.editora = novatec;
-        meuLivro.paginas = 484;
-        meuLivro.resumo = "UML abordagem prática";
+        meuLivro.setTitulo("UML 2");
+        meuLivro.setAutor("Gilleanes Guedes");
+        meuLivro.setPreco(50);
+        meuLivro.setEditora(novatec);
+        meuLivro.setPaginas(484);
+        meuLivro.setResumo("UML abordagem prática");
         //meuLivro.tipoCapa = br.com.fiap.enums.TipoCapaEnum.DURA;
 
 
 
 
         meuLivro.exibirLivro();
+
+        Livro livroDaGiovanna = new Livro(novatec);
+        livroDaGiovanna.setTitulo("Harry Potter e a pedra filosofal");
+        livroDaGiovanna.setAutor("JK");
         //--------------------------
         Livro livro = new Livro();
         System.out.println("Digite o nome do livro: ");
-        livro.titulo = entrada.nextLine();
+        livro.setTitulo(entrada.nextLine());
 
         System.out.println("Tipo de capa: \n" +
                 "1- Comum \n" +
@@ -48,12 +52,15 @@ public class  TesteLivro {
         int opcao = leitorNumerico.nextInt();
 
         if(opcao == 1)
-            livro.tipoCapa = TipoCapaEnum.COMUM;
+            livro.setTipoCapa(TipoCapaEnum.COMUM);
         else if(opcao == 2)
-            livro.tipoCapa = TipoCapaEnum.DURA;
+            livro.setTipoCapa(TipoCapaEnum.DURA);
         else
-            livro.tipoCapa = TipoCapaEnum.PERSONALIZADA;
+            livro.setTipoCapa(TipoCapaEnum.PERSONALIZADA);
 
-        System.out.println("Capa: "+livro.tipoCapa);
+        System.out.println("Capa: "+livro.getTipoCapa());
     }
+
+
+
 }
